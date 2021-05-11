@@ -1,0 +1,5 @@
+{
+  "auth": "Backend API Auth Token",
+  "token": "Discord Bot Token",
+  "prefix": "!!"
+}
