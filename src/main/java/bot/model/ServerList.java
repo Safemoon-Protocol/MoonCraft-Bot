@@ -7,7 +7,6 @@ import java.util.List;
  */
 public class ServerList {
 
-    public int totalCount;
+    public int totalOnline;
     public List<Server> servers;
-
 }

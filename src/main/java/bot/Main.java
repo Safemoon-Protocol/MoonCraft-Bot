@@ -29,7 +29,7 @@ public class Main {
         JDABuilder builder = JDABuilder.createDefault(config.token);
 
         // Set the bot's display activity
-        builder.setActivity(Activity.playing("MoonCraft"));
+        builder.setActivity(Activity.playing(config.presence));
 
         // Register the listener for receiving commands
         builder.addEventListeners(new MessageReceived());

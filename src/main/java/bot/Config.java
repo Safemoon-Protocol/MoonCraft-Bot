@@ -12,5 +12,6 @@ public class Config {
     public final String token;
     public final String auth;
     public final String prefix;
+    public final String presence;
 
 }

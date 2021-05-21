@@ -48,7 +48,7 @@ public class Online extends ListenerAdapter {
         /*
          * Regardless of arguments, always return the total online player count.
          */
-        eb.addField("Total Players", String.valueOf(Servers.SERVER_LIST.totalCount), true);
+        eb.addField("Total Players", String.valueOf(Servers.SERVER_LIST.totalOnline), true);
         event.getChannel().sendMessage(eb.build()).queue();
     }
 }
