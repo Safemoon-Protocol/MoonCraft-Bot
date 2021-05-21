@@ -31,7 +31,7 @@ public class Servers {
         ResponseBody body = response.body();
         if (body != null) {
             SERVER_LIST = Main.GSON.fromJson(body.string(), ServerList.class);
-            return SERVER_LIST.servers.stream().filter(server -> !server.isRestricted).collect(Collectors.toList());
+            return SERVER_LIST.servers.stream().collect(Collectors.toList());
         } else
             return new ArrayList<>();
     }
