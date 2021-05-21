@@ -1,10 +1,8 @@
 package bot;
 
 import bot.event.MessageReceived;
-import com.google.common.io.Resources;
 import com.google.gson.Gson;
 import com.google.gson.stream.JsonReader;
-import lombok.SneakyThrows;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.entities.Activity;
 import okhttp3.OkHttpClient;
@@ -43,9 +41,8 @@ public class Main {
     /*
      * Loads config from resources/config.json
      */
-    @SneakyThrows(FileNotFoundException.class)
     public static void loadConfig() {
-        JsonReader reader = new JsonReader(new FileReader(Resources.getResource("config.json").getFile()));
+        JsonReader reader = new JsonReader(new BufferedReader(new InputStreamReader(Main.class.getResourceAsStream("/bot/config.json"))));
         config = GSON.fromJson(reader, Config.class);
     }
 
