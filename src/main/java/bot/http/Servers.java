@@ -17,7 +17,7 @@ import java.util.stream.Collectors;
  */
 public class Servers {
 
-    private static final String baseUrl = "https://api.minestock.org";
+    private static final String baseUrl = "https://mcapi.safemoon.net";
     public static ServerList SERVER_LIST;
 
     @SneakyThrows(IOException.class)
