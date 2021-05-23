@@ -28,6 +28,11 @@ public class Online extends ListenerAdapter {
         eb.setColor(Color.decode("#00A79D"));
 
         /*
+         * Regardless of arguments, always return the total online player count.
+         */
+        eb.addField("Total Players", String.valueOf(Servers.SERVER_LIST.totalOnline), false);
+
+        /*
          * If an argument is given in the command,
          * check if the server exists.
          * If the server exists, return the player count.
@@ -37,18 +42,18 @@ public class Online extends ListenerAdapter {
             String serverName = command[1];
             Optional<Server> serverOpt = servers.stream().filter(s -> s.name.equalsIgnoreCase(serverName)).findFirst();
             serverOpt.ifPresent(server -> {
-                eb.addField(server.name.substring(0, 1).toUpperCase() + server.name.substring(1), String.valueOf(server.onlineCount), true);
+                eb.addField(server.name.substring(0, 1).toUpperCase() + server.name.substring(1), String.valueOf(server.onlineCount), false);
             });
             if (serverOpt.isEmpty()) {
                 String serverNames = servers.stream().map(server -> server.name).collect(Collectors.joining(", "));
                 eb.setDescription("A server with the name `" + serverName + "` was not found. Please choose from the following: " + serverNames);
                 eb.setColor(Color.RED);
             }
+        } else {
+            for (Server s : servers) {
+                eb.addField(s.name.substring(0, 1).toUpperCase() + s.name.substring(1), String.valueOf(s.onlineCount), true);
+            }
         }
-        /*
-         * Regardless of arguments, always return the total online player count.
-         */
-        eb.addField("Total Players", String.valueOf(Servers.SERVER_LIST.totalOnline), true);
         event.getChannel().sendMessage(eb.build()).queue();
     }
 }
