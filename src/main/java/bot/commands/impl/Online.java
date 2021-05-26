@@ -44,7 +44,7 @@ public class Online extends ListenerAdapter {
             serverOpt.ifPresent(server -> {
                 eb.addField(server.name.substring(0, 1).toUpperCase() + server.name.substring(1), String.valueOf(server.onlineCount), false);
             });
-            if (serverOpt.isEmpty()) {
+            if (serverOpt.isPresent()) {
                 String serverNames = servers.stream().map(server -> server.name).collect(Collectors.joining(", "));
                 eb.setDescription("A server with the name `" + serverName + "` was not found. Please choose from the following: " + serverNames);
                 eb.setColor(Color.RED);
