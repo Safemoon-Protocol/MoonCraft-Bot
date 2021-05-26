@@ -8,6 +8,7 @@ import net.dv8tion.jda.api.entities.Activity;
 import okhttp3.OkHttpClient;
 import javax.security.auth.login.LoginException;
 import java.io.*;
+import java.util.Scanner;
 
 /*
  * MoonCraft Bot's main class.
@@ -36,6 +37,28 @@ public class Main {
 
         // Finally, build and start the bot.
         builder.build();
+
+        while(true) {
+
+            final Scanner scanner = new Scanner(System.in);
+            String cmd = scanner.nextLine();
+
+            switch(cmd.split(" ")[0].toLowerCase()) {
+
+                case("stop"):
+
+                    System.out.println("Stopping MoonCraft Bot...");
+                    System.exit(0);
+
+
+                default:
+
+                    System.out.print("That isn't a command, you're such a silly willy. ;)");
+
+            }
+
+        }
+
     }
 
     /*
