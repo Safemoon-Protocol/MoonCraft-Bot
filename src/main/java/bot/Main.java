@@ -53,7 +53,7 @@ public class Main {
 
                 default:
 
-                    System.out.print("That isn't a command, you're such a silly willy. ;)");
+                    System.out.print("Command not found");
 
             }
 
