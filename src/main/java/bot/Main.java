@@ -46,13 +46,12 @@ public class Main {
             switch(cmd.split(" ")[0].toLowerCase()) {
 
                 case("stop"):
-
                     System.out.println("Stopping MoonCraft Bot...");
                     System.exit(0);
+                    break;
 
 
                 default:
-
                     System.out.print("Command not found");
 
             }

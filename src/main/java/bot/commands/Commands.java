@@ -17,7 +17,8 @@ public enum Commands {
 
     HELP("help", "Command for help", new Help()),
     VERIFY("verify", "Allows users to link minecraft accounts", new Verify()),
-    ONLINE("online", "Checks player count of online servers", new Online());
+    ONLINE("online", "Checks player count of online servers", new Online()),
+    PROFILE("profile", "Fetches a player's Mooncraft profile", new Profile());
 
     public static final Commands[] VALUES = values();
 

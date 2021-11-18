@@ -1,6 +1,6 @@
 package bot.commands.impl;
 
-import bot.http.Servers;
+import bot.Http;
 import bot.model.Server;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
@@ -21,7 +21,8 @@ public class Online extends ListenerAdapter {
     public void onGuildMessageReceived(GuildMessageReceivedEvent event) {
         String[] command = event.getMessage().getContentRaw().split(" ");
         boolean hasArgs = command.length != 1;
-        List<Server> servers = Servers.getServers();
+        Http http = new Http();
+        List<Server> servers = http.getServers();
 
         EmbedBuilder eb = new EmbedBuilder();
         eb.setTitle("MoonCraft Online Players");
@@ -30,7 +31,7 @@ public class Online extends ListenerAdapter {
         /*
          * Regardless of arguments, always return the total online player count.
          */
-        eb.addField("Total Players", String.valueOf(Servers.SERVER_LIST.totalOnline), false);
+        eb.addField("Total Players", String.valueOf(Http.SERVER_LIST.totalOnline), false);
 
         /*
          * If an argument is given in the command,

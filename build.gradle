@@ -19,7 +19,7 @@ repositories {
 dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
-    compile ('net.dv8tion:JDA:4.2.1_262') {
+    compile ('net.dv8tion:JDA:4.3.0_346') {
         exclude module: 'opus-java'
     }
     compileOnly 'org.projectlombok:lombok:1.18.12'
