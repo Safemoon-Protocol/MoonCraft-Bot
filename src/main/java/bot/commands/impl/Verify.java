@@ -36,7 +36,7 @@ public class Verify extends ListenerAdapter {
          */
         HttpUrl httpUrl = new HttpUrl.Builder()
             .scheme("https")
-            .host("api.minestock.org")
+            .host("mcapi.safemoon.net")
             .addPathSegments("post/verify")
             .addQueryParameter("auth", Main.config.auth)
             .addQueryParameter("token", token)
